@@ -112,6 +112,10 @@ export class Mechanism extends core.BaseObject {
         this.maxKeySize = info.maxKeySize;
         this.flags = info.flags;
     }
+    
+    protected initToken(pin: string): string {
+        return this.lib.C_InitToken(this.slotHandle, pin);
+    }
 
     static create(alg: MechanismType): pkcs11.Mechanism {
         let res: pkcs11.Mechanism;

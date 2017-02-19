@@ -1,0 +1,86 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\cmder\bin;C:\cmder\vendor\git-for-windows\bin;C:\cmder\vendor\git-for-windows\usr\bin;C:\cmder\vendor\git-for-windows\share\vim\vim74;C:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\cmder\vendor\conemu-maximus5;C:\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Python27\;D:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\azerothian\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\azerothian\AppData\Local\Programs\Git\cmd;C:\Users\azerothian\AppData\Local\Programs\Git\mingw64\bin;C:\Users\azerothian\AppData\Local\Programs\Git\usr\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\PostgreSQL\pg95\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Calibre2\;C:\Program Files\Git LFS;C:\ProgramData\chocolatey\bin;C:\tools\python2;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\WinMerge;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\OpenVPN\bin;C:\Users\azerothian\AppData\Local\Programs\Git\cmd;C:\Users\azerothian\AppData\Local\Programs\Git\mingw64\bin;C:\Users\azerothian\AppData\Local\Programs\Git\usr\bin;C:\Users\azerothian\AppData\Local\atom\bin;C:\Program Files\Docker Toolbox;C:\Program Files (x86)\Microsoft VS Code\bin;D:\Android\sdk\platform-tools;C:\Program Files\Java\jdk1.8.0_66\bin;C:\Users\azerothian\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Nmap;C:\Users\azerothian\AppData\Roaming\npm;C:\Users\azerothian\AppData\Local\Yarn\.bin;C:\cmder
+
+Yarn version: 
+  0.17.9
+
+Node version: 
+  7.2.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "graphene-pk11",
+    "version": "2.0.19",
+    "description": "A simple layer for interacting with PKCS #11 / PKCS11 / CryptoKI for Node in TypeScript",
+    "main": "./build/graphene.js",
+    "types": "index.d.ts",
+    "scripts": {
+      "clean": "rm -rf build/ coverage/ .nyc_output/ npm-debug.log npm-debug.log.*",
+      "test": "mocha",
+      "install": "npm run build",
+      "build": "npm run build:es5",
+      "build:es5": "tsc",
+      "build:es2015": "tsc --module es2015 --target es2015",
+      "build:source": "tsc --sourceMap",
+      "pub": "npm run build && npm test && npm version patch && npm publish && git push",
+      "sync": "git ac && git pull --rebase && git push",
+      "coverage": "npm run build:source && nyc npm test",
+      "precoveragehtml": "npm run coverage",
+      "coveragehtml": "nyc report -r html",
+      "watch": "watch 'npm run coveragehtml' lib/ src/ test/",
+      "live": "live-server -q --port=4005 --ignorePattern='(js|css|png)$' coverage",
+      "predev": "if [ ! -f coverage/index.html ]; then mkdir coverage; cp .waiting.html coverage/index.html; fi",
+      "dev": "npm-run-all -p --silent watch live",
+      "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/PeculiarVentures/graphene.git"
+    },
+    "engines": {
+      "node": "*"
+    },
+    "dependencies": {
+      "@types/node": "^7.0.5",
+      "pkcs11js": "latest",
+      "typescript": "^2"
+    },
+    "devDependencies": {
+      "live-server": "^1",
+      "npm-run-all": "^4",
+      "nyc": "^10",
+      "watch": "^1",
+      "mocha": "^3.2.0"
+    },
+    "bugs": {
+      "url": "https://github.com/PeculiarVentures/graphene/issues"
+    },
+    "keywords": [
+      "pkcs11",
+      "cryptography",
+      "cryptoki",
+      "token",
+      "smartcard",
+      "hsm",
+      "bitcoin",
+      "RSA",
+      "ECC"
+    ],
+    "author": "PeculiarVentures",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: ENOENT: no such file or directory, open 'D:\dev\graphene\node_modules\@types\node\index.d.ts'
